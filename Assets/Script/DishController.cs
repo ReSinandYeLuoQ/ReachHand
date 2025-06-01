@@ -1,0 +1,73 @@
+using UnityEngine;
+
+public class DishController : MonoBehaviour
+{
+    // 菜的唯一标识（将被传递给餐盘）
+    public int asdf = 0;
+
+    [Header("视觉效果")]
+    public float hoverScale = 1.2f;
+    public Color glowColor = Color.yellow;
+    public float glowIntensity = 2f;
+    // 8个不同的菜贴图
+    public Sprite[] dishSprites;
+
+    private Vector3 originalScale;
+    private bool isGlowing = false;
+    private SpriteRenderer visualRenderer;
+
+    [Range(0, 7)] public int qwer = 0;    // 控制当前菜的贴图选择 (0-7)
+
+    void Start()
+    {
+        // 初始化组件
+        visualRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        originalScale = transform.localScale;
+
+        // 根据GameManager设置贴图
+        UpdateDishSprite();
+    }
+
+    // 根据GameManager的qwer变量更新贴图
+    public void UpdateDishSprite()
+    {
+        int index = Mathf.Clamp(qwer, 0, 7);
+        visualRenderer.sprite = dishSprites[index];
+    }
+
+    void OnMouseEnter()
+    {
+        // 鼠标悬停时放大
+        transform.localScale = originalScale * hoverScale;
+    }
+
+    void OnMouseExit()
+    {
+        // 鼠标离开时恢复大小
+        transform.localScale = originalScale;
+    }
+
+    void OnMouseDown()
+    {
+        // 切换发光状态
+        isGlowing = !isGlowing;
+
+        // 更新发光效果
+        if (isGlowing)
+        {
+            visualRenderer.material.SetColor("_EmissionColor", glowColor * glowIntensity);
+            PlateController.Instance.SelectDish(this);
+        }
+        else
+        {
+            visualRenderer.material.SetColor("_EmissionColor", Color.black);
+        }
+    }
+
+    // 外部调用取消发光
+    public void DisableGlow()
+    {
+        isGlowing = false;
+        visualRenderer.material.SetColor("_EmissionColor", Color.black);
+    }
+}
