@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class PlateSlot : MonoBehaviour
 {
-    // 区域编号 (0-3)
-    public int slotIndex;
-
+    public GameObject book;
+    ButtonPanelController buttonPanelController;
+    void Start()
+    {
+        buttonPanelController = book.GetComponent<ButtonPanelController>();
+    }
     void OnMouseDown()
     {
-        if (PlateController.Instance.selectedDish != null)
+        if (PlateController.Instance.selectedDish != null&& buttonPanelController.isBookOpen==false)
         {
             // 将菜品数据传递给餐盘
             PlateController.Instance.PlaceDishOnSlot(
-                slotIndex,
-                PlateController.Instance.selectedDish.asdf
+                GameManager.platenum,
+                PlateController.Instance.selectedDish.dishkindnow
             );
         }
     }

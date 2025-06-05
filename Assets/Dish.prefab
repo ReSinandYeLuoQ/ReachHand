@@ -137,13 +137,13 @@ MonoBehaviour:
   glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   glowIntensity: 2
   dishSprites:
-  - {fileID: 7482667652216324306, guid: 811f85dcfab5edf43867fe0a8dd20329, type: 3}
-  - {fileID: 7482667652216324306, guid: 811f85dcfab5edf43867fe0a8dd20329, type: 3}
-  - {fileID: 7482667652216324306, guid: 811f85dcfab5edf43867fe0a8dd20329, type: 3}
-  - {fileID: 7482667652216324306, guid: 811f85dcfab5edf43867fe0a8dd20329, type: 3}
-  - {fileID: 7482667652216324306, guid: 811f85dcfab5edf43867fe0a8dd20329, type: 3}
-  - {fileID: 7482667652216324306, guid: 811f85dcfab5edf43867fe0a8dd20329, type: 3}
-  - {fileID: 7482667652216324306, guid: 811f85dcfab5edf43867fe0a8dd20329, type: 3}
+  - {fileID: -2413806693520163455, guid: 629e03f80f1e7654bbcc58a9090e6a0f, type: 3}
+  - {fileID: -2413806693520163455, guid: 629e03f80f1e7654bbcc58a9090e6a0f, type: 3}
+  - {fileID: -2413806693520163455, guid: 629e03f80f1e7654bbcc58a9090e6a0f, type: 3}
+  - {fileID: -2413806693520163455, guid: 629e03f80f1e7654bbcc58a9090e6a0f, type: 3}
+  - {fileID: -2413806693520163455, guid: 629e03f80f1e7654bbcc58a9090e6a0f, type: 3}
+  - {fileID: -2413806693520163455, guid: 629e03f80f1e7654bbcc58a9090e6a0f, type: 3}
+  - {fileID: -2413806693520163455, guid: 629e03f80f1e7654bbcc58a9090e6a0f, type: 3}
   qwer: 0
 --- !u!61 &2029209144416766025
 BoxCollider2D:
